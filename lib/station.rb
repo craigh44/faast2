@@ -1,4 +1,8 @@
+require_relative "passenger_holder"
+
 class Station
+
+	include PassengerHolder
 
 	def initialize
 	  @trains = []
@@ -14,19 +18,8 @@ class Station
 	  @trains.count
 	end
 
-	def accept_from(coach)
- 	  @passengers << coach.release
-	end
-
 	def accept(passenger)
 		@passengers << passenger
 	end
-
-	def release
-		@passengers.pop
-	end
-
-	def passenger_count
-	  @passengers.count 
-	end
+	
 end

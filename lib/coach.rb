@@ -1,4 +1,8 @@
+require_relative "passenger_holder"
+
 class Coach
+
+	include PassengerHolder
 
 	DEFAULT_CAPACITY = 40
 
@@ -6,10 +10,6 @@ class Coach
 	  self.capacity = options.fetch(:capacity, capacity)
  	  @passengers = []
  	end
-
-	def passenger_count
-	  @passengers.count 
-	end
 
  	def capacity
  	  @capacity ||= DEFAULT_CAPACITY
@@ -19,14 +19,8 @@ class Coach
       @capacity = value
     end
 
-	def accept_from(station)
+    def accept_from(place)
 	  raise "Coach Full" if passenger_count >= @capacity
-	  @passengers << station.release
+	  @passengers << place.release_passenger
 	end
-
-	def release
-	  @passengers.pop
-	end
-
-	
 end

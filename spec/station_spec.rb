@@ -16,10 +16,4 @@ let(:coach) {double :coach, release: true}
 	  station.arrive(train)
 	  expect{station.arrive(train)}.to raise_error("Already a train in station")
 	end
-
-	it "should accept passengers" do
-	  station.accept(coach)
-	  expect(station.passenger_count).to eq 1
-	end
-
 end 
