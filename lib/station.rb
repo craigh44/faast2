@@ -14,6 +14,10 @@ class Station
 	  @trains << train
 	end
 
+	def depart(train)
+		@trains.pop
+	end
+
 	def train_count
 	  @trains.count
 	end
@@ -21,5 +25,5 @@ class Station
 	def accept(passenger)
 		@passengers << passenger
 	end
-	
+
 end
