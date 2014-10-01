@@ -15,8 +15,8 @@ describe Passenger do
 	end
 
 	it "Should minus 2 from balance when touches in" do 
-		allow(station).to receive(:accept)
-		expect{passenger.touch_in(station)}.to change{passenger.balance}.by -2
+	  allow(station).to receive(:accept)
+	  expect{passenger.touch_in(station)}.to change{passenger.balance}.by -2
 	end
 
 	it "Should raise error if balance in less than 2 and tries to touch in" do 

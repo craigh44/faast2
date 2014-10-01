@@ -14,12 +14,16 @@ class Station
 	  @trains.count
 	end
 
-	def accept(passenger)
- 	  @passengers << passenger
+	def accept_from(coach)
+ 	  @passengers << coach.release
 	end
 
-	def release(passenger)
-		@passengers.delete(passenger)
+	def accept(passenger)
+		@passengers << passenger
+	end
+
+	def release
+		@passengers.pop
 	end
 
 	def passenger_count

@@ -5,9 +5,9 @@ describe Station do
 let(:station) {Station.new}
 let(:train) {double :train} 
 let(:passenger) {double :passenger}
+let(:coach) {double :coach, release: true}
 
 	it "should be able to accept a train" do
-	  station = Station.new
 	  station.arrive(train)
 	  expect(station.train_count).to eq 1
 	end 
@@ -18,7 +18,7 @@ let(:passenger) {double :passenger}
 	end
 
 	it "should accept passengers" do
-	  station.accept(passenger)
+	  station.accept(coach)
 	  expect(station.passenger_count).to eq 1
 	end
 
