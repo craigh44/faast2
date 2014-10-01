@@ -4,7 +4,7 @@ describe Coach do
 
 let(:coach) {Coach.new(:capacity => 40)}
 let(:passenger) {double :passenger}
-let(:station) {double :station, release: true, :empty? => true}
+let(:station) {double :station, release_passenger: true, :empty? => true}
 let(:train) {double :train}
 
 	def fill_coach(passenger)
